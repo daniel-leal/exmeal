@@ -6,12 +6,12 @@ defmodule Exmeal.Meal do
 
   @required_params [:descricao, :data, :calorias]
 
-  @derive {Jason.Encoder, only: [:id, :descricao, :data, :calorias]}
+  @derive {Jason.Encoder, only: [:id] ++ @required_params}
 
   schema "meals" do
     field(:descricao, :string)
-    field(:data, :utc_datetime)
-    field(:calorias, :float)
+    field(:data, :naive_datetime)
+    field(:calorias, :integer)
 
     timestamps()
   end
@@ -20,6 +20,5 @@ defmodule Exmeal.Meal do
     struct
     |> cast(params, @required_params)
     |> validate_required(@required_params)
-    |> validate_number(:calorias, greater_than: 1)
   end
 end

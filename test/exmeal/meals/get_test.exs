@@ -1,24 +1,25 @@
 defmodule Exmeal.Meals.GetTest do
-  use Exmeal.DataCase
+  use Exmeal.DataCase, async: true
+
+  import Exmeal.Factory
+
+  alias Exmeal.{Error, Meal}
 
   describe "Get Meal" do
-    test "when a valid id is given, returns the meal" do
-      params = %{
-        calories: 20,
-        date: ~D[2001-05-02],
-        description: "Banana"
-      }
+    test "when the meal exists, returns the meal" do
+      params = build(:meal_params)
+      {:ok, %Meal{id: id}} = Exmeal.create_meal(params)
 
-      {_ok, meal} = Exmeal.create_meal(params)
-
-      response = Exmeal.get_meal_by_id(meal.id)
+      response = Exmeal.get_meal_by_id(id)
 
       assert {:ok,
-              %Exmeal.Meal{
-                calories: 20,
-                date: ~D[2001-05-02],
-                description: "Banana",
-                id: _id
+              %Meal{
+                calorias: _cal,
+                data: _date,
+                descricao: "Banana",
+                id: _id,
+                inserted_at: _inserted_at,
+                updated_at: _updated_at
               }} = response
     end
 
@@ -26,7 +27,7 @@ defmodule Exmeal.Meals.GetTest do
       id = "a6ef9b39-d638-4835-9ad7-dbe48d1257eb"
       response = Exmeal.get_meal_by_id(id)
 
-      assert {:error, %Exmeal.Error{result: "Meal not found", status: :not_found}} = response
+      assert {:error, %Error{result: "Meal not found!", status: :not_found}} = response
     end
   end
 end
