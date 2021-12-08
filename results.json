@@ -53,13 +53,6 @@
       "test": "test Delete Meal when a valid id is given, returns the meal"
     },
     {
-      "describe": "get/2",
-      "file": "/home/daniel/Projects/rocketseat/ignite/exmeal/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 128,
-      "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test get/2 when id not exist, return an error"
-    },
-    {
       "describe": "delete/2",
       "file": "/home/daniel/Projects/rocketseat/ignite/exmeal/test/exmeal_web/controller/meals_controller_test.exs",
       "line": 41,
@@ -76,16 +69,16 @@
     {
       "describe": "get/2",
       "file": "/home/daniel/Projects/rocketseat/ignite/exmeal/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 106,
+      "line": 128,
       "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test get/2 when id exist, return the meal"
+      "test": "test get/2 when id not exist, return an error"
     },
     {
-      "describe": "create/2",
+      "describe": "delete/2",
       "file": "/home/daniel/Projects/rocketseat/ignite/exmeal/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 24,
+      "line": 56,
       "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test create/2 when there are invalid params, returns an error"
+      "test": "test delete/2 when id not exist, return an error"
     },
     {
       "describe": "create/2",
@@ -95,11 +88,18 @@
       "test": "test create/2 when all params are valid, creates a meal"
     },
     {
-      "describe": "delete/2",
+      "describe": "create/2",
       "file": "/home/daniel/Projects/rocketseat/ignite/exmeal/test/exmeal_web/controller/meals_controller_test.exs",
-      "line": 56,
+      "line": 24,
       "module": "Elixir.Exmeal.MealsControllerTest",
-      "test": "test delete/2 when id not exist, return an error"
+      "test": "test create/2 when there are invalid params, returns an error"
+    },
+    {
+      "describe": "get/2",
+      "file": "/home/daniel/Projects/rocketseat/ignite/exmeal/test/exmeal_web/controller/meals_controller_test.exs",
+      "line": 106,
+      "module": "Elixir.Exmeal.MealsControllerTest",
+      "test": "test get/2 when id exist, return the meal"
     },
     {
       "describe": "update/2",

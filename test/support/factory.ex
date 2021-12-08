@@ -11,14 +11,6 @@ defmodule Exmeal.Factory do
     }
   end
 
-  def meal_body_factory do
-    %{
-      "calorias" => "20",
-      "data" => ~N[2001-05-02 00:00:00],
-      "descricao" => "Banana"
-    }
-  end
-
   def meal_factory do
     %Meal{
       id: "5a99cd33-a5cc-44ca-91aa-1c1a43d00276",
